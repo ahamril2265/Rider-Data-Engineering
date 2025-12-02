@@ -1,0 +1,15 @@
+flagship_data_engineering/
+│
+├── phase0_project_setup/
+│   ├── README.md
+│   ├── .gitignore
+│   └── project_structure.txt
+│
+├── phase1_bronze_streaming/
+├── phase2_silver_transformation/
+├── phase3_gold_warehouse/
+├── phase4_data_quality/
+├── phase5_batch_aggregation/
+├── phase6_monitoring_lineage/
+├── phase7_dashboard_api/
+└── phase8_kubernetes_deployment/

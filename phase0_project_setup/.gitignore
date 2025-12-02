@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# VS Code
+.vscode/
+
+# Virtual environments
+venv/
+env/
+.airflow_env/
+
+# Logs
+logs/
+*.log
+
+# Data files
+*.csv
+*.parquet
+*.json
+
+# Spark temporary files
+spark-warehouse/
+derby.log/
+
+# OS generated files
+.DS_Store
+Thumbs.db
