@@ -1,36 +1,119 @@
-# Rider Data Engineering — NYC Taxi Pipeline (Flagship Project)
+# NYC Taxi Data Platform
 
-This is an enterprise-level data engineering project built using:
+A production-inspired Data Engineering project that processes NYC Taxi trip records using Apache Airflow, Python, PostgreSQL, and a Medallion Architecture (Bronze → Silver → Gold).
 
-- Apache Airflow (ETL orchestration)
-- Python (data processing)
-- PostgreSQL / DuckDB / BigQuery (warehouse)
-- NYC Taxi Trip Data (real dataset)
-- Docker (containerization)
-- Data Lakes (Bronze → Silver → Gold architecture)
+---
 
-## Project Architecture
+## Project Goal
 
-Extract → Transform → Load pipeline:
-1. **Bronze Layer (Raw Data)**  
-   Download monthly NYC Taxi CSV/Parquet files.
+This project demonstrates how modern data platforms ingest, transform, validate, and serve large-scale transportation datasets for analytics.
 
-2. **Silver Layer (Cleaned Data)**  
-   Standardize schema, handle missing values, fix datatypes.
+The pipeline processes NYC Taxi trip data and produces analytics-ready datasets for reporting and business intelligence.
 
-3. **Gold Layer (Analytics Ready)**  
-   Aggregations: hourly trips, fare distribution, heatmaps, etc.
+---
 
-## Airflow DAG
+## Architecture
 
-`nyc_taxi_pipeline.py`  
-This orchestrates:
-- extract_nyc_taxi
-- transform_nyc_taxi
-- load_nyc_taxi
+```text
+NYC Taxi Dataset
+        │
+        ▼
+ ┌─────────────┐
+ │ Bronze      │
+ │ Raw Data    │
+ └──────┬──────┘
+        │
+        ▼
+ ┌─────────────┐
+ │ Silver      │
+ │ Clean Data  │
+ └──────┬──────┘
+        │
+        ▼
+ ┌─────────────┐
+ │ Gold        │
+ │ Analytics   │
+ └──────┬──────┘
+        │
+        ▼
+ PostgreSQL
+        │
+        ▼
+ Dashboards
+```
+
+---
+
+## Tech Stack
+
+| Category | Technology |
+|-----------|-----------|
+| Language | Python |
+| Orchestration | Apache Airflow |
+| Storage | Parquet |
+| Database | PostgreSQL |
+| Containerization | Docker |
+| Analytics | SQL |
+
+---
+
+## Pipeline Workflow
+
+```text
+extract_nyc_taxi
+        │
+        ▼
+transform_nyc_taxi
+        │
+        ▼
+load_nyc_taxi
+```
+
+---
+
+## Features
+
+### Bronze Layer
+
+- Raw trip ingestion
+- Immutable storage
+- Historical snapshots
+
+### Silver Layer
+
+- Data cleaning
+- Schema standardization
+- Quality validation
+
+### Gold Layer
+
+- Revenue analytics
+- Trip aggregation
+- Geographic insights
+
+### Orchestration
+
+- Airflow scheduling
+- Retry policies
+- Dependency management
+
+---
 
 ## Future Enhancements
-- Kafka streaming ingestion
-- dbt for warehouse modeling
-- Spark for big transformations
-- Full CI/CD with GitHub Actions
+
+- Kafka Streaming
+- Spark Processing
+- dbt Modeling
+- Data Quality Framework
+- Grafana Monitoring
+- CI/CD Pipelines
+
+---
+
+## Author
+
+Ahamed Rilwan
+
+GitHub: https://github.com/ahamril2265
+
+LinkedIn: https://linkedin.com/in/ahamedrilwan
